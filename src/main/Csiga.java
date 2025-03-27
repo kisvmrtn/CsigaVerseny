@@ -22,7 +22,7 @@ public class Csiga {
     }
     
     public String getPozicio() {
-        return pozicio;
+        return this.pozicio;
     }
     public void setPozicio(String pozicio) {
         this.pozicio += pozicio;
@@ -35,6 +35,9 @@ public class Csiga {
     }
     public boolean getGyorsito() {
         return gyorsito;
+    }
+    public void setGyorsito(boolean gyorsito) {
+        this.gyorsito = gyorsito;
     }
     
     public void mozog() {
@@ -51,6 +54,7 @@ public class Csiga {
                 egyseg += "-";
             }
         }
-        System.out.println(egyseg);
+        this.pozicio += egyseg;
+        System.out.println(this.pozicio);
     }
 }
