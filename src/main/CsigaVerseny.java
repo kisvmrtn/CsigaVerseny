@@ -1,20 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package main;
 
-/**
- *
- * @author KisváradiMárton(Szf_
- */
 public class CsigaVerseny {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    private String[] Csiga;
+    private int korok;
+    private Csiga nyertes;
+    private String tipp;
+    
+    public void verseny() {
+        
+    }
+    
+    public void gyorsitas() {
+        
     }
     
 }
