@@ -8,8 +8,8 @@ public class Csiga {
     
     static final Random rnd = new Random();
     
-    private String szin;
-    private String szinKod;
+    private final String szin;
+    private final String szinKod;
     private String pozicio;
     private boolean gyorsito;
     

@@ -24,7 +24,7 @@ public class CsigaVerseny {
     
     
     public Csiga[] getCsigak() {
-        return this.Csigak;
+        return Csigak;
     }
     public int getKorok() {
         return korok;
@@ -39,10 +39,13 @@ public class CsigaVerseny {
         return tipp;
     }
     public void verseny(int korSzam) {
-        
-        System.out.println("Tippelj egy csigára (P, K, Z): ");
-        String tipp = scn.nextLine();
+        do {
+            System.out.println("Nem tippelhető azonosító.");
+            System.out.println("Tippelj egy csigára (P, K, Z): ");
+            tipp = scn.nextLine();
+        } while (!tipp.equals("P") && !tipp.equals("K") && !tipp.equals("Z"));
         this.tipp = tipp;
+        
         
         for (int i = 0; i < korSzam; i++) {
             gyorsitas();
@@ -59,6 +62,7 @@ public class CsigaVerseny {
     public void tippErtekeles() {
         setNyertes(Csigak[0]);
         int cst = 0;
+        
         switch(this.tipp) {
             case "K":
                 cst = 1;
@@ -74,9 +78,13 @@ public class CsigaVerseny {
             }
         }
         if (Csigak[cst] == nyertes) {
-            System.out.printf("\033[0m" + "Nyertes tipp! Győztes: %s%s\n", nyertes.getSzinKod(), nyertes.getSzin());
+            System.out.printf("""
+                              \u001b[0mNyertes fogadás! \nGyőztes: %s%s
+                              """, nyertes.getSzinKod(), nyertes.getSzin());
         } else {
-            System.out.printf("\033[0m" + "Vesztes fogadás. Tipped: %s%s" + "\033[0m" + " Győztes: %s%s\n", Csigak[cst].getSzinKod(), Csigak[cst].getSzin(), nyertes.getSzinKod(), nyertes.getSzin());
+            System.out.printf("""
+                              \u001b[0mVesztes fogadás. \nTipped: %s%s\n\u001b[0mGyőztes: %s%s
+                              """, Csigak[cst].getSzinKod(), Csigak[cst].getSzin(), nyertes.getSzinKod(), nyertes.getSzin());
         }
     }
     
