@@ -8,16 +8,20 @@ public class Csiga {
     
     static final Random rnd = new Random();
     
+    private String szin;
     private String szinKod;
     private String pozicio;
     private boolean gyorsito;
     
-    public Csiga(String szin) {
-        this.szinKod = szin;
+    public Csiga(String szin, String szinKod) {
+        this.szin = szin;
+        this.szinKod = szinKod;
         this.pozicio = "";
     }
-    
     public String getSzin() {
+        return szin;
+    }
+    public String getSzinKod() {
         return szinKod;
     }
     

@@ -17,9 +17,9 @@ public class CsigaVerseny {
     
     public CsigaVerseny() {
         Csigak = new Csiga[3];
-        Csigak[0] = new Csiga("\033[31m");
-        Csigak[1] = new Csiga("\033[34m");
-        Csigak[2] = new Csiga("\033[32m");
+        Csigak[0] = new Csiga("Piros", "\033[31m");
+        Csigak[1] = new Csiga("Kék","\033[34m");
+        Csigak[2] = new Csiga("Zöld","\033[32m");
     }
     
     
@@ -35,7 +35,7 @@ public class CsigaVerseny {
     public void setNyertes(Csiga nyertes) {
         this.nyertes = nyertes;
     }
-    public String tipp() {
+    public String getTipp() {
         return tipp;
     }
     public void verseny(int korSzam) {
@@ -50,9 +50,9 @@ public class CsigaVerseny {
             Csigak[1].mozog();
             Csigak[2].mozog();
         }
-        System.out.printf("%s %s ~@/o-🐌 (%d)\n",Csigak[0].getSzin(), Csigak[0].getPozicio(), (Csigak[0].getPozicio().length()-10));
-        System.out.printf("%s %s ~@/o-🐌 (%d)\n",Csigak[1].getSzin(), Csigak[1].getPozicio(), (Csigak[1].getPozicio().length()-10));
-        System.out.printf("%s %s ~@/o-🐌 (%d)\n",Csigak[2].getSzin(), Csigak[2].getPozicio(), (Csigak[2].getPozicio().length()-10));
+        System.out.printf("%s %s 🐌 (%d)\n",Csigak[0].getSzinKod(), Csigak[0].getPozicio(), (Csigak[0].getPozicio().length()-10));
+        System.out.printf("%s %s 🐌 (%d)\n",Csigak[1].getSzinKod(), Csigak[1].getPozicio(), (Csigak[1].getPozicio().length()-10));
+        System.out.printf("%s %s 🐌 (%d)\n",Csigak[2].getSzinKod(), Csigak[2].getPozicio(), (Csigak[2].getPozicio().length()-10));
         tippErtekeles();
     }
     
@@ -74,9 +74,9 @@ public class CsigaVerseny {
             }
         }
         if (Csigak[cst] == nyertes) {
-            System.out.println("Nyertes tipp");
+            System.out.printf("\033[0m" + "Nyertes tipp! Győztes: %s%s\n", nyertes.getSzinKod(), nyertes.getSzin());
         } else {
-            System.out.println("Vesztes");
+            System.out.printf("\033[0m" + "Vesztes fogadás. Tipped: %s%s" + "\033[0m" + " Győztes: %s%s\n", Csigak[cst].getSzinKod(), Csigak[cst].getSzin(), nyertes.getSzinKod(), nyertes.getSzin());
         }
     }
     
