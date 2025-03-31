@@ -7,7 +7,7 @@ public class Jatek {
         System.out.println(CSIGA);
         
         CsigaVerseny v1 = new CsigaVerseny();
-        v1.verseny();
+        v1.verseny(10);
         
     }
 }
