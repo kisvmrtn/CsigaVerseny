@@ -39,6 +39,8 @@ public class CsigaVerseny {
         return tipp;
     }
     public void verseny(int korSzam) {
+        System.out.println("Tippelj egy csigára (P, K, Z): ");
+        tipp = scn.nextLine();
         do {
             System.out.println("Nem tippelhető azonosító.");
             System.out.println("Tippelj egy csigára (P, K, Z): ");
